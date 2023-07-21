@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+---
+spring:
+  profiles: local
+
+redis:
+  cluster:
+    clusterHosts: 127.0.0.1:7004,127.0.0.1:7003,127.0.0.1:7005
+    commands:
+      timeoutMilliSeconds: 1500
+      asyncTimeoutMilliSeconds: 3000
+      setBaseExpireSeconds: 120
+
